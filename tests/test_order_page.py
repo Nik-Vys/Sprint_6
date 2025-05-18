@@ -4,7 +4,6 @@ import pytest
 from test_data import Users
 from locators.main_page_locators import MainPageLocators
 from pages.order_page import OrderPage
-from confitest import driver
 
 class TestOrderPage:
 

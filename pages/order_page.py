@@ -1,6 +1,4 @@
 import allure
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions
 
 from locators.order_page_locators import OrderPageLocators
 from pages.base_page import BasePage
@@ -87,4 +85,4 @@ class OrderPage(BasePage):
 
     @allure.step('Проверка отображения окна с текстом подтверждения заказа')
     def check_order_title_text(self):
-        return WebDriverWait(self.driver, 30).until(expected_conditions.presence_of_element_located(OrderPageLocators.order_placed_text))
+        return self.wait_for_visible_locator(OrderPageLocators.order_placed_text)
